@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="icon" href="./Images/pngtree-sun-orange-three-dimensional-illustration-png-image_6694186.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="w-[100vw] h-[100vh] text-[--colorLight2] ">
+        <div class="max-w-[600px] w-[85%] mx-auto">
+            <h1 class="text-center pt-[40px] text-3xl font-bold">WEATHER APP</h1>
+            <div class="tab-container flex justify-between mt-[3rem] text-[1rem]">
+                <p class="tab cursor-pointer  px-2 p-1 tracking-[1.2px] " data-userWeather>Your Weather</p>
+                <p class="tab cursor-pointer px-2 p-1 tracking-[1.2px] " data-searchWeather>Search Weather</p>
+            </div>
+            <div class="weather-container flex justify-center items-center flex-col my-[3.5rem]">
+                <!-- grant location access -->
+                <div class="sub-container grant-location-container mx-auto flex flex-col items-center">
+                    <img src="./images/location.png" width="100" class="mb-[2rem] " height="100" alt="">
+                    <p class="text-[1.5rem] tracking-[0.8px]  font-semibold ">Grant Location Access</p> 
+                    <p class="text-[0.85rem] font-medium mt-[0.75rem] mb-[1.75rem] tracking-[0.6px]" >
+                        Allow access to get weather Information
+                    </p>
+                    <button class="btn bg-[--colorDark2] rounded-md py-[7px] px-[16px] text-[1.07rem]" data-grantAccess>
+                        GRANT ACCESS
+                    </button>
+                </div>
+                <!-- search form -->
+                <form action="" class="form-container w-[90%] max-w-[550px] mx-auto my-0 flex justify-center 
+                    items-center gap-x-[10px] mb-[2rem] " data-searchForm>
+                    <input placeholder="Search for City..." class="w-[calc(100%-80px)] h-[40px] -mt-4 py-0 px-[20px]
+                        rounded-[7px] placeholder-white focus:outline-slate-400" data-searchInput>
+                    <button class="btn form-btn w-[40px] h-[40px] flex items-center justify-center rounded-full
+                        bg-[--colorDark2] mb-[16px]" type="submit">
+                        <img src="./images/search.png" class="" width="25" height="25" alt="">
+                    </button>
+                </form>
+                <!-- loading screen -->
+                <div class="loading-container flex mx-auto flex-col items-center">
+                    <img src="./images/loading.gif" width="150" height="150" alt="">
+                    <p class="uppercase">Loading...</p>
+                </div>
+                <!-- show weather info -->
+                <div class="user-info-container flex-col items-center flex"> 
+                    <!-- city name and flag -->
+                    <div class="name-flag flex items-center gap-y-[0] gap-x-[0.5rem] mb-[1rem]">
+                        <p data-cityName class="text-[1.9rem] "></p>
+                        <img data-countryIcon src="" class="" width="37px" height="37px" alt="">
+                    </div>
+                    <!-- weather desc -->
+                    <p data-weatherDesc class="text-[1.9rem] font-[400] capitalize"></p>
+                    <!-- weather icon -->
+                    <img data-weatherIcon src="" alt="" class="" width="90px" height="90px">
+                    <!-- temperature -->
+                    <p data-temp class="text-[2.6rem] font-[700] "></p>
+                    <!-- 3 card parameter -->
+                    <div class="parameter-container flex gap-y-[10px] gap-x-[20px] justify-center items-center 
+                            mt-[2rem] mx-auto">
+                        <!-- card 1 -->
+                        <div class="parameter flex flex-col w-[30%] rounded-[5px] justify-between 
+                            gap-y-[4px] gap-x-0 items-center p-[1rem] px-[40px]">
+                            <img src="./images/wind.png" class="" width="50px" height="50px" alt="">
+                            <p class="uppercase  text-[1.25rem] font-[500] tracking-[1.3px]">Windspeed</p>
+                            <p data-windSpeed class="text-[1.2rem]"></p>
+                        </div>
+                        <!-- card 2 -->
+                        <div class="parameter flex flex-col w-[30%] rounded-[5px] justify-between 
+                            gap-y-[4px] gap-x-0 items-center p-[1rem] px-[40px]">
+                            <img src="./images/humidity.png" class="" width="50px" height="50px" alt="">
+                            <p class="uppercase text-[1.25rem] font-[500] tracking-[1.3px]">Humidity</p>
+                            <p data-humidity class="text-[1.2rem]"></p>
+                        </div>
+                        <!-- card 3 -->
+                        <div class="parameter flex flex-col p-[1rem] w-[30%] rounded-[5px] justify-between 
+                            gap-y-[4px] gap-x-0 items-center px-[40px]">
+                            <img src="./images/cloud.png" class="" width="50px" height="50px" alt="">
+                            <p class="uppercase text-[1.25rem] font-[500] tracking-[1.3px]">Clouds</p>
+                            <p data-cloudiness class="text-[1.2rem]"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://kit.fontawesome.com/8047145711.js" crossorigin="anonymous"></script>
+    <script src="./script.js" type="module"></script>
+</body>
+</html>
